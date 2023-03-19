@@ -24,7 +24,16 @@
 
         public static decimal GetUserInput(string message, decimal min)
         {
-            
+            Console.WriteLine(message);
+            bool valid = decimal.TryParse(Console.ReadLine(), out decimal input);
+
+            while (!valid)
+            {
+                Console.Write($"Please enter a valid price");
+                valid = decimal.TryParse(Console.ReadLine(), out input);
+            }
+
+            return input;
         }
 
         /* 
