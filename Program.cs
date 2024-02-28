@@ -32,18 +32,19 @@
          */
         static void PrintReceipt(List<decimal> list)
         {
+            const int CellWidth = 20;
             List<decimal> discountedList = GetDiscountedList(list);
             Console.WriteLine("Receipt");
             //Header
-            Console.WriteLine($"{"Regular Price",20} {"Discounted Price",20}");
+            Console.WriteLine($"{"Regular Price",CellWidth} {"Discounted Price",CellWidth}");
 
             for (int i = 0; i < list.Count; i++)
             {
-                Console.WriteLine($"{list[i],20:c} {discountedList[i],20:c}");
+                Console.WriteLine($"{list[i],CellWidth:c} {discountedList[i],CellWidth:c}");
             }
 
-            Console.WriteLine($"{"Total",20} {"Total",20}");
-            Console.WriteLine($"{GetTotal(list),20:c} {GetTotal(discountedList),20:c}");
+            Console.WriteLine($"{"Total",CellWidth} {"Total",CellWidth}");
+            Console.WriteLine($"{GetTotal(list),CellWidth:c} {GetTotal(discountedList),CellWidth:c}");
 
             Console.WriteLine($"The Cheapest Item before discount is {list[GetCheapest(list)]:c}");
             Console.WriteLine($"The Cheapest Item after discount is {discountedList[GetCheapest(discountedList)]:c}");
