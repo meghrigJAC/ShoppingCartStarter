@@ -5,13 +5,13 @@
         static void Main(string[] args)
         {
             //Create a list of items
-           
+
 
             //Ask the user to enter the first price
 
 
             //Check for sentinel value
-           
+
 
             //Process data results
 
@@ -27,7 +27,7 @@
             Console.WriteLine(message);
             bool valid = decimal.TryParse(Console.ReadLine(), out decimal input);
 
-            while (!valid)
+            while (!valid || input < min)
             {
                 Console.Write($"Please enter a valid price");
                 valid = decimal.TryParse(Console.ReadLine(), out input);
@@ -67,7 +67,7 @@
 
         static int GetCheapest(List<decimal> list)
         {
-           
+
         }
 
         /*
@@ -76,7 +76,7 @@
 
         static int GetMostExpensive(List<decimal> list)
         {
-            
+
         }
 
         /*
@@ -84,7 +84,7 @@
         */
         static decimal GetTotal(List<decimal> list)
         {
-            
+
         }
 
         /*
@@ -93,7 +93,7 @@
 
         static List<decimal> GetDiscountedList(List<decimal> list)
         {
-            
+
         }
     }
 }
